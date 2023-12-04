@@ -8,6 +8,23 @@ Hint - use Date class exposed in JS
 There is no automated test for this one, this is more for you to understand time goes up as computation goes up
 */
 
+function calculateSum(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
 function calculateTime(n) {
-    return 0.01;
+    const startTime = new Date(); // Start timing
+
+    calculateSum(n); // Perform the sum calculation
+
+    const endTime = new Date(); // End timing
+
+    // Calculate the difference in milliseconds and convert to seconds
+    const timeTaken = (endTime - startTime) / 1000;
+
+    return timeTaken;
 }

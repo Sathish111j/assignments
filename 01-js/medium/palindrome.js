@@ -4,7 +4,9 @@
 */
 
 function isPalindrome(str) {
-  return true;
+    str = str.toLowerCase().replace(/[\W_]/g, ''); // Remove non-alphanumeric characters
+    return str === str.split('').reverse().join('');
 }
+
 
 module.exports = isPalindrome;
